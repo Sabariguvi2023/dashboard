@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Dashboard from "./Componaets/Dashboard";
+import Side from "./Componaets/Side";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  return <>
+            <div id="wrapper">
+              <Side/>
+              <div id="content-wrapper" className="d-flex flex-column">
+              <div id="content">
+                <Dashboard/>
+            
+        </div>
+      </div>
+      </div>
 
+
+</>
+}
 export default App;
