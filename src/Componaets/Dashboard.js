@@ -1,8 +1,12 @@
 import React from 'react'
 import Carder from './Carder'
+import Table from 'react-bootstrap/Table'
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 
-function Dashboard() {
+function Dashboard({users,setUsers}) {
+    let navigate =useNavigate()
     let data=[
         {
             title :"Earnings (Monthly)",
@@ -32,7 +36,12 @@ function Dashboard() {
             icon  :"fa-comments",
             isProgress :false
         }
-    ]
+    ] 
+    let handleDelete = (i)=>{
+        let newUsers=[...users]
+        newUsers.splice(i,1)
+        setUsers(newUsers)
+    }
   return <>
    <div className="container-fluid">
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
@@ -56,9 +65,42 @@ function Dashboard() {
         }
         </div>
 </div>
+       
+      <div className='container-fluid'>
+      <Table striped bordered hover>
+      <thead>
+        <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>email</th>
+        <th>address</th>
+        <th>mobile</th>
+        <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+            users.map((e,i)=>{
+                return <tr key={i}>
+                    <td>{i+1}</td>
+                    <td>{e.name}</td>
+                    <td>{e.email}</td>
+                    <td>{e.address}</td>
+                    <td>{e.mobile}</td>
+                    <td>
+                        <Button variant='primary' onClick={()=>navigate('/edit-user/${id}')}>Edit</Button>
+                        {' '}
+                        <Button variant='danger' onClick={()=>handleDelete(i)}>Delete</Button>
+                    </td>
 
-
-  </>
+                </tr>
+            })
+        }
+          
+    </tbody>
+</Table>
+ </div>
+ </>
   
 }
 
