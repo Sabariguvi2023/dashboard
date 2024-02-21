@@ -3,6 +3,7 @@ import Carder from './Carder'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 function Dashboard({users,setUsers}) {
@@ -100,6 +101,18 @@ function Dashboard({users,setUsers}) {
     </tbody>
 </Table>
  </div>
+ {/* <div>
+    <h2>Expactations of a fsd Project</h2>
+    <ul>
+        <li>Proper SignIn and SingUp Flow is Expacted </li>
+        <li>forgot and reset password</li>
+        <li>Should invlov all basic crud applications</li>
+        <li>Role based App remedering</li>
+        <li>Chart or Graphs providing some data</li>
+        <li>Expost Functionlity</li>
+        <li>Mobile Reposnsive</li>
+    </ul>
+ </div> */}
  </>
   
 }

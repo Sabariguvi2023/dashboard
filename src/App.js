@@ -2,8 +2,9 @@ import Dashboard from "./Componaets/Dashboard";
 import Side from "./Componaets/Side";
 import AddUser from "./Componaets/AddUser";
 import EditUser from "./Componaets/EditUser";
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
 import { useState } from "react";
+import Details from "./Files/Details";
 
 function App() {
   let [users,setUsers] = useState([
@@ -31,6 +32,10 @@ function App() {
               <Route path="/dashboard" element={<Dashboard users={users} setUsers={setUsers}/>}/>
               <Route path='/add-user' element={<AddUser users={users} setUsers={setUsers}/>}/>
               <Route path='/edit-user/:id' element={<EditUser users={users} setUsers={setUsers}/>}/>
+              <Route path='/details' element={<Details/>}>
+                
+              </Route>
+              <Route path='/' element={<Navigate to ='/dashboard'/> }/>
             </Routes>
       
   </div>

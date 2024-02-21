@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
 function AddUser({users,setUsers}) {
+  
     let [name,setName] =useState("")
     let [email,setEmail] =useState("")
     let [address,setAddress] =useState("")
@@ -12,12 +13,7 @@ function AddUser({users,setUsers}) {
 
     let handleSave =()=>{
         let newArray =[...users] 
-        newArray.push({
-            name,
-            email,
-            address,
-            mobile
-        })
+        newArray.push({name, email, address, mobile})
         setUsers(newArray)
         navigate('/dashboard')
     }
