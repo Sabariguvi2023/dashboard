@@ -50,7 +50,7 @@ function Side() {
 </Link>
 </li>
 
-{/* <li className="nav-item">
+<li className="nav-item">
  <Link to ='/details'>
 <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
     aria-expanded="true" aria-controls="collapseUtilities">
@@ -58,7 +58,7 @@ function Side() {
     <span>Details</span>
 </a>
 </Link>
-</li> */}
+</li>
 
 </ul>  
 </>

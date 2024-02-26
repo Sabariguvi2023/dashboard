@@ -20,15 +20,20 @@ function EditUser({users,setUsers}) {
         navigate('/dashboard')
     }
     useEffect(()=>{
-      console.log("use Effect trigger")
+      // console.log("use Effect trigger")
       console.log("update")
       if(params.id < users.lenght){
+
+        setName(users[params.id].name)
+        setEmail(users[params.id].email)
+        setAddress(users[params.id].address)
+        setMobile(users[params.id].mobile)
 
       }
     
       
       
-     })
+     },[name])
 
   return <>
   <div className="d-sm-flex align-items-center justify-content-between mb-4">
