@@ -3,10 +3,11 @@ import Carder from './Carder'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from './Context/UserContectComponaets';
+import { useContext } from 'react';
 
 
-function Dashboard({users,setUsers}) {
-    let navigate =useNavigate()
+function Dashboard() {
     let data=[
         {
             title :"Earnings (Monthly)",
@@ -37,10 +38,15 @@ function Dashboard({users,setUsers}) {
             isProgress :false
         }
     ] 
+    let context =useContext(UserContext)
+    // let dashboard =useContext(DashBoardContextComponaets)
+    console.log(context);
+    let navigate =useNavigate()
+    
     let handleDelete = (i)=>{
-        let newUsers=[...users]
+        let newUsers=[...context.users]
         newUsers.splice(i,1)
-        setUsers(newUsers)
+        context.setUsers(newUsers)
     }
   return <>
    <div className="container-fluid">
@@ -52,7 +58,7 @@ function Dashboard({users,setUsers}) {
  
         <div className="row">
         {
-            data.map((e,i)=>{
+           data.map((e,i)=>{
                return <Carder key={i} 
                 title={e.title}
                 value={e.value}
@@ -80,7 +86,7 @@ function Dashboard({users,setUsers}) {
       </thead>
       <tbody>
         {
-            users.map((e,i)=>{
+           context.users.map((e,i)=>{
                 return <tr key={i}>
                     <td>{i+1}</td>
                     <td>{e.name}</td>
@@ -99,6 +105,18 @@ function Dashboard({users,setUsers}) {
           
     </tbody>
 </Table>
+ </div>
+ <div>
+    <h2>Expactations of a fsd Project</h2>
+    <ul>
+        <li>Proper SignIn and SingUp Flow is Expacted </li>
+        <li>forgot and reset password</li>
+        <li>Should invlov all basic crud applications</li>
+        <li>Role based App remedering</li>
+        <li>Chart or Graphs providing some data</li>
+        <li>Expost Functionlity</li>
+        <li>Mobile Reposnsive</li>
+    </ul>
  </div>
  </>
   

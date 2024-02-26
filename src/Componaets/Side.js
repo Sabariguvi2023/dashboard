@@ -50,6 +50,16 @@ function Side() {
 </Link>
 </li>
 
+<li className="nav-item">
+ <Link to ='/details'>
+<a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+    aria-expanded="true" aria-controls="collapseUtilities">
+    <i className="fas fa-fw fa-wrench"></i>
+    <span>Details</span>
+</a>
+</Link>
+</li>
+
 </ul>  
 </>
 }
